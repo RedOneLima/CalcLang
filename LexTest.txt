@@ -1,0 +1,12 @@
+x=3
+y=5
+z=x+y*7
+msg z
+show "hello!"
+angle = 3.14
+test1 = sqrt( 5 )
+test2 = cos ( angle )
+w = sin( angle )
+in = input()
+newline
+msg x+y
