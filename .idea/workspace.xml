@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="070226ff-de06-47b1-9b10-3dc48d6a2b64" name="Default" comment="">
+    <list default="true" id="070226ff-de06-47b1-9b10-3dc48d6a2b64" name="Default" comment="Beta Parser. Testing needed.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpleTest" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser.java" afterPath="$PROJECT_DIR$/src/Parser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LexTest.txt" afterPath="$PROJECT_DIR$/LexTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Node.java" afterPath="$PROJECT_DIR$/src/Node.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,10 +51,13 @@
           <file leaf-file-name="Node.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Node.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="955">
-                  <caret line="278" column="37" lean-forward="false" selection-start-line="278" selection-start-column="37" selection-end-line="278" selection-end-column="37" />
+                <state relative-caret-position="179">
+                  <caret line="72" column="4" lean-forward="false" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
                   <folding>
-                    <element signature="e#0#17930#0" expanded="true" />
+                    <element signature="e#0#18176#0" expanded="true" />
+                    <marker date="1491448187444" expanded="false" signature="592:808" ph="{...}" />
+                    <marker date="1491448187444" expanded="false" signature="882:1089" ph="{...}" />
+                    <marker date="1491448187444" expanded="false" signature="1122:1367" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -77,15 +82,57 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="LexTest.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LexTest.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="LexTest.txt" pinned="false" current-in-tab="true">
+          <file leaf-file-name="LexTest.txt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/LexTest.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+                <state relative-caret-position="51">
+                  <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="12" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NameIntTable.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/NameIntTable.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1003">
+                  <caret line="71" column="22" lean-forward="false" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+                  <folding>
+                    <element signature="e#0#2177#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="simpleTest" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/simpleTest">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Design" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Design">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="474">
+                  <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -112,6 +159,7 @@
       <find>third</find>
       <find>op</find>
       <find>oppp</find>
+      <find>bifOps</find>
     </findStrings>
     <replaceStrings>
       <replace>opp</replace>
@@ -139,10 +187,11 @@
         <option value="$PROJECT_DIR$/src/NameIntTable.java" />
         <option value="$PROJECT_DIR$/src/Joint.java" />
         <option value="$PROJECT_DIR$/src/Token.java" />
-        <option value="$PROJECT_DIR$/LexTest.txt" />
         <option value="$PROJECT_DIR$/src/Lexer.java" />
-        <option value="$PROJECT_DIR$/src/Node.java" />
         <option value="$PROJECT_DIR$/src/Parser.java" />
+        <option value="$PROJECT_DIR$/LexTest.txt" />
+        <option value="$PROJECT_DIR$/simpleTest" />
+        <option value="$PROJECT_DIR$/src/Node.java" />
       </list>
     </option>
   </component>
@@ -760,7 +809,7 @@
       <workItem from="1491415662646" duration="5000" />
       <workItem from="1491423308184" duration="1978000" />
       <workItem from="1491425339070" duration="3865000" />
-      <workItem from="1491435737773" duration="6941000" />
+      <workItem from="1491435737773" duration="9096000" />
     </task>
     <task id="LOCAL-00001" summary="Parser in progress">
       <created>1491433501986</created>
@@ -769,11 +818,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491433501986</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Parser in progress">
+      <created>1491444461848</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1491444461848</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32945000" />
+    <option name="totallyTimeSpent" value="35100000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -790,7 +846,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -827,7 +883,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update 01APR:&#10;&#10;Finished converting the Lexer from Otter to CalcLang" />
     <MESSAGE value="Parser in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parser in progress" />
+    <MESSAGE value="Beta Parser. Testing needed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Beta Parser. Testing needed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -910,14 +967,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Design">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LexTest.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -942,7 +991,7 @@
         <state relative-caret-position="6775">
           <caret line="278" column="33" lean-forward="false" selection-start-line="278" selection-start-column="33" selection-end-line="278" selection-end-column="33" />
           <folding>
-            <element signature="e#0#17930#0" expanded="true" />
+            <element signature="e#0#18176#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -970,7 +1019,7 @@
           <caret line="69" column="29" lean-forward="false" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
           <folding>
             <element signature="e#0#1945#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1034,7 +1083,7 @@
         <state relative-caret-position="15657">
           <caret line="928" column="14" lean-forward="false" selection-start-line="928" selection-start-column="14" selection-end-line="928" selection-end-column="14" />
           <folding>
-            <element signature="e#0#17930#0" expanded="true" />
+            <element signature="e#0#18176#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1045,7 +1094,7 @@
           <caret line="82" column="14" lean-forward="false" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
           <folding>
             <element signature="e#0#1945#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1118,7 +1167,7 @@
         <state relative-caret-position="15657">
           <caret line="928" column="14" lean-forward="false" selection-start-line="928" selection-start-column="14" selection-end-line="928" selection-end-column="14" />
           <folding>
-            <element signature="e#0#17930#0" expanded="true" />
+            <element signature="e#0#18176#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1146,7 +1195,7 @@
           <caret line="82" column="14" lean-forward="false" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
           <folding>
             <element signature="e#0#1945#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1202,7 +1251,7 @@
         <state relative-caret-position="23200">
           <caret line="928" column="14" lean-forward="false" selection-start-line="928" selection-start-column="14" selection-end-line="928" selection-end-column="14" />
           <folding>
-            <element signature="e#0#17930#0" expanded="true" />
+            <element signature="e#0#18176#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1230,7 +1279,7 @@
           <caret line="82" column="14" lean-forward="false" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
           <folding>
             <element signature="e#0#1945#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1284,7 +1333,7 @@
           <caret line="69" column="29" lean-forward="false" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
           <folding>
             <element signature="e#0#1945#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1332,16 +1381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NameIntTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#2177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NameIntPair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1351,14 +1390,6 @@
             <element signature="e#246#247#0" expanded="false" />
             <element signature="e#288#289#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Design">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1373,10 +1404,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LexTest.txt">
+    <entry file="file://$PROJECT_DIR$/src/Design">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="474">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleTest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1398,12 +1437,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/LexTest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NameIntTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="71" column="22" lean-forward="false" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#2177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="955">
-          <caret line="278" column="37" lean-forward="false" selection-start-line="278" selection-start-column="37" selection-end-line="278" selection-end-column="37" />
+        <state relative-caret-position="179">
+          <caret line="72" column="4" lean-forward="false" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
           <folding>
-            <element signature="e#0#17930#0" expanded="true" />
+            <element signature="e#0#18176#0" expanded="true" />
+            <marker date="1491448187444" expanded="false" signature="592:808" ph="{...}" />
+            <marker date="1491448187444" expanded="false" signature="882:1089" ph="{...}" />
+            <marker date="1491448187444" expanded="false" signature="1122:1367" ph="{...}" />
           </folding>
         </state>
       </provider>

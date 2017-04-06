@@ -8,19 +8,15 @@ import java.io.*;
 import java.awt.*;
 
 public class Node {
-    public static int count = 0;  // maintain unique id for each node
-
-    private int id;
-
+    private static int count = 0;  // maintain unique id for each node
+    private int id; //id is count
     private String kind;  // non-terminal or terminal category for the node
-    private String info;  // extra information about the node such as
-    // the actual identifier for an I
+    private String info;  // extra information about the node such as the actual identifier
+    private Node first, second, third; //children nodes
 
-    // references to children in the parse tree
-    private Node first, second, third;
 
-    // construct a common node with no info specified
     public Node( String k, Node one, Node two, Node three ) {
+    // construct a common node with no info specified
         kind = k;  info = "";
         first = one;  second = two;  third = three;
         id = count;
@@ -28,8 +24,8 @@ public class Node {
         System.out.println( this );
     }
 
-    // construct a node with specified info
     public Node( String k, String inf, Node one, Node two, Node three ) {
+    // construct a node with specified info
         kind = k;  info = inf;
         first = one;  second = two;  third = three;
         id = count;
@@ -37,8 +33,8 @@ public class Node {
         System.out.println( this );
     }
 
-    // construct a node that is essentially a token
     public Node( Token token ) {
+    // construct a node that is essentially a token
         kind = token.getKind();  info = token.getDetails();
         first = null;  second = null;  third = null;
         id = count;
@@ -50,9 +46,8 @@ public class Node {
         return "#" + id + "[" + kind + "," + info + "]";
     }
 
-    // produce array with the non-null children
-    // in order
     private Node[] getChildren() {
+        //produce array with the non-null children in order
         int count = 0;
         if( first != null ) count++;
         if( second != null ) count++;
@@ -65,6 +60,10 @@ public class Node {
 
         return children;
     }
+
+//===================================================================================================================
+//-------------------------------------------------------------------------------------------------------------------
+//===================================================================================================================
 
     //******************************************************
     // graphical display of this node and its subtree
@@ -112,6 +111,8 @@ public class Node {
 
     }// draw
 
+
+
     //=========================================================================
     //   translate Joint code to VPL code
     //=========================================================================
@@ -125,8 +126,7 @@ public class Node {
     private static int lastLabel;  // last label used (start at 1000 for readability)
 
     // for convenience use these arrays for the uniform ops
-    private static String[] bifs = { "add", "sub", "mult", "div", "rem", "eq", "neq", "lt", "lteq",
-            "and", "or", "new" };
+    private static String[] bifs = { "sin", "cos", "sqrt" };
     private static int[] bifOps = { 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 31 };
 
     public static int nextAux() {
