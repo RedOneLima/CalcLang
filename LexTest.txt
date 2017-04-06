@@ -1,8 +1,8 @@
 x=3
 y=5
-z=x+y*7
+z=x+(y*7)
 msg "hello!"
-show z
+show - z
 angle = 3.14
 test1 = sqrt( 5 )
 test2 = cos ( angle )

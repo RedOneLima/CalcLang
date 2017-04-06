@@ -1,0 +1,72 @@
+program could be like:
+  N from lexical phase can be any nonnegative calculator number,
+   V from lexical phase can be any variable (starts with letter, followed by
+            0 or more letters or digits)
+
+x=3
+y=5
+z=x+y*7
+msg z
+angle = 3.14
+w = sin( angle )
+msg x+y
+
+---------------------
+; pythagorean theorem
+input "a= " a
+input "b= " b
+c = ( a*a + b*b )
+print "triangle with sides " a
+print " and " b
+print "has hyp = " c
+newline
+---------------------
+; can use built-in functions
+input "enter angle: " angle
+print "cos is " cos(angle)
+
+---------------------
+Lexical part:  see jpg,
+plus add string tokens
+
+Kinds of tokens are:
+  N (nonnegative floating point number (or integer))
+  V (variable name)
+  BIFN (built-in function name --- sqrt, sin, cos)
+  STRING (a string, like "hello")
+  NEWLINE (newline), PRINT (print), INPUT (input)
+  various single-symbol tokens represent themselves:   + - * / = ( )
+
+---------------------
+Context free grammar:  (E = <expression>)
+
+<statements> -> <statement>
+<statements> -> <statement> <statements>
+
+<statement> -> V = E
+<statement> -> SHOW E           (show)
+<statement> -> MESSAGE STRING   (keyword is "msg")
+<statement> -> INPUT STRING V      (STRING is the token for a "whatever")
+<statement> -> NEWLINE
+
+    (use E instead of <expression>, etc.)
+
+E -> T
+E -> T + E | T - E
+
+T -> F
+T -> F * T | F / T
+
+F -> N          (from lexical phase:  number)
+F -> V          (from lexical phase:  variable)
+F -> (E)
+F -> - F
+F -> BIFN ( E )
+
+------------------
+Informal specification of the semantics
+
+interpret the parse tree---need to know the
+meaning (semantics) of each different kind of
+Node (obvious!)
+

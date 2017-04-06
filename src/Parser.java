@@ -140,7 +140,7 @@ public class Parser {
                 Node first = parseExpression();
                 Token tok3 = lex.getToken();
                 if (tok3.matches("opp", ")")) {
-                    return new Node("factor", new Node(tok2), first, new Node(tok3));
+                    return new Node("factor", new Node(tok), first, null);
                 } else {
                     System.out.println("-> ' ) ' expected");
                     System.exit(1);
