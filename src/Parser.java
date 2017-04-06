@@ -24,8 +24,7 @@ public class Parser {
         Lexer lex = new Lexer( name );
         Parser parser = new Parser( lex );
 
-        Node root = parser.parseStatement();  // parser.parseProgram();
-
+        Node root = parser.parseStatements();  // parser.parseProgram();
         TreeViewer viewer = new TreeViewer("Parse Tree", 0, 0, 800, 500, root );
 
     }
@@ -54,23 +53,44 @@ public class Parser {
         if( token.isKind( "var" ) ) {
             Token token2 = lex.getToken();
 
-            if (token2.matches("op", "=")) {// variable assignment
+            if (token2.matches("opp", "=")) {// variable assignment
                first = parseExpression();
-               return new Node ("statement", first, null, null);
-                //info = "call";
-                //first = null;
+               return new Node ("statement", new Node(token), new Node(token2), first);
+            }else{
+                System.out.println("Missing assignment statement");
+                System.exit(1);
             }
         }else if (token.isKind("show")){
             //TODO keyword
-            lex.putBack(token);
             first = parseExpression();
             return new Node ("statement", first, null, null);
         }else if (token.isKind("msg")){
             //TODO keyword
+            Token tok2 = lex.getToken();
+            if(tok2.isKind("string")){
+                return new Node("statement", first, new Node(tok2), null);
+            }else{
+                System.out.println("msg expects a string");
+                System.exit(1);
+            }
         }else if (token.isKind("newline")){
             //TODO keyword
+            return new Node(token);
         }else if (token.isKind("input")){
             //TODO keyword
+            Token tok2 = lex.getToken();
+            if (tok2.isKind("string")){
+                Token tok3 = lex.getToken();
+                if (tok3.isKind("var")){
+                    return new Node("statement", new Node(token), new Node(tok2), new Node(tok3));
+                }else{
+                    System.out.println("Expected variable");
+                    System.exit(1);
+                }
+            }else{
+                System.out.println("String expected");
+                System.exit(1);
+            }
         }
         else {// error
             System.out.println("Error:  illegal first token " + token + " to start <statement>");
@@ -80,54 +100,87 @@ public class Parser {
         return new Node( "statement", info, first, second, third );
     }
 
-
     private Node parseExpression() {
         System.out.println("-----> parsing expression:");
+        Node first = parseTerm();
         Token token1 = lex.getToken();
-        if( token1.isKind("num") ) {
-            Node first = parseTerm();
-            return new Node("expression", first, null, null );
+        //TODO --> WHAT DO I DO WITH THE TOKEN??
+        if( token1.matches("opp", "+") || token1.matches("opp","-") ) {
+            Node second = parseExpression();
+            return new Node("expression", first, new Node(token1) , second );
         }
-        else {// token1 must be identifier (noticing <funcCall> starts with ID)
-            errorCheck( token1, "id" );
-            Node first = new Node( token1 );
+        lex.putBack(token1);
+        return new Node ("expression", first, null, null);
+    }
 
-            Token token2 = lex.getToken();  // look ahead
-
-            if( token2.matches( "single", "[" ) ) {// array retrieve
-                Node second = parseExpression();
-                Token token = lex.getToken();
-                errorCheck( token, "single", "]" );
-                return new Node("expression", first, second, null );
-            }
-            else if( token2.matches( "single", "(" ) ) {// funcCall
-                lex.putBack( token2 );  // put back ( and identifier that turns out to be func name
-                lex.putBack( token1 );
-                Node second = null;//TODO parseFuncCall();
-                return new Node("expression", second, null, null );
-            }
-            else {// must be just an identifier
-                lex.putBack( token2 );
-                return new Node("expression", first, null, null );
-            }
+    private Node parseTerm(){
+        System.out.println("-----> parsing term");
+        Node first = parseFactor();
+        Token tok = lex.getToken();
+        //TODO --> WHAT DO I DO WITH THE TOKEN??
+        if( tok.matches("opp","*") || tok.matches("opp","/")){
+            Node second = parseTerm();
+            return new Node("term", first, new Node(tok), second);
         }
+        lex.putBack(tok);
+        return new Node("term", first, null, null);
 
     }
 
-    private Node parseTerm(){return new Node(null);}//TODO
+    private Node parseFactor() {
+        System.out.println("-----> parsing factor");
+        Token tok = lex.getToken();
+//Terminals
+        if (tok.isKind("num") || tok.isKind("var")) {
+            return new Node("factor", new Node(tok), null, null);
+//BIFN
+        } else if (tok.isKind("bif")) {
+            Token tok2 = lex.getToken();
+            if (tok2.matches("opp", "(")) {
+                Node first = parseExpression();
+                Token tok3 = lex.getToken();
+                if (tok3.matches("opp", ")")) {
+                    return new Node("factor", new Node(tok2), first, new Node(tok3));
+                } else {
+                    System.out.println("-> ' ) ' expected");
+                    System.exit(1);
+                }
+            } else {
+                System.out.println("-> ' ( ' expected");
+                System.exit(1);
+            }
+//Negitive
+        } else if (tok.matches("opp", "-")) {
+            Node first = parseFactor();
+            return new Node("factor", new Node(tok), first, null);
+        }
+// ( )
+        else if (tok.matches("opp", "(")) {
+            Node first = parseExpression();
+            Token tok2 = lex.getToken();
+            if (tok.matches("opp", ")")) {
+                return new Node("factor", new Node(tok), first, new Node(tok2));
+            } else {
+                System.out.println("-> ' ) ' expected");
+                System.exit(1);
+            }
+        }else{
+            System.out.println("Token "+tok +" outside of grammer for factor");
+            System.exit(1);
+        }
+        return null;
+    }
 
-    private Node parseFactor(){return new Node(null);}//TODO
-
-    // check whether token is correct kind
     private void errorCheck( Token token, String kind ) {
+    // check whether token is correct kind
         if( ! token.isKind( kind ) ) {
             System.out.println("Error:  expected " + token + " to be of kind " + kind );
             System.exit(1);
         }
     }
 
-    // check whether token is correct kind and details
     private void errorCheck( Token token, String kind, String details ) {
+    // check whether token is correct kind and details
         if( ! token.isKind( kind ) || ! token.getDetails().equals( details ) ) {
             System.out.println("Error:  expected " + token + " to be kind=" + kind + " and details=" + details );
             System.exit(1);
