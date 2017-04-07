@@ -25,11 +25,11 @@ public class Parser {
         Parser parser = new Parser( lex );
 
         Node root = parser.parseStatements();  // parser.parseProgram();
-        TreeViewer viewer = new TreeViewer("Parse Tree", 0, 0, 800, 500, root );
+        //TreeViewer viewer = new TreeViewer("Parse Tree", 0, 0, 800, 500, root );
 
     }
 
-    private Node parseStatements() {
+    public Node parseStatements() {
         System.out.println("-----> parsing statements:");
         Node first = parseStatement();
         Token token = lex.getToken();
@@ -38,7 +38,6 @@ public class Parser {
             Node second = parseStatements();
             return new Node("statements", first, second, null);
         } else {
-            lex.putBack(token);
             return new Node("statements", first, null, null);
         }
     }
@@ -63,7 +62,7 @@ public class Parser {
         }else if (token.isKind("show")){
             //TODO keyword
             first = parseExpression();
-            return new Node ("statement", first, null, null);
+            return new Node ("statement", new Node(token), first, null);
         }else if (token.isKind("msg")){
             //TODO keyword
             Token tok2 = lex.getToken();

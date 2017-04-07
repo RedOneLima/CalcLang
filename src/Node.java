@@ -56,7 +56,6 @@ public class Node {
         }else if(kind.equals("statement")) {
             if (first.kind.equals("var")) {
                 if (second.info.equals("=")) {
-                    //TODO
                     third.evaluate();
                 }
             }else if(first.kind.equals("show")){
@@ -75,13 +74,21 @@ public class Node {
     public double evaluate(){
         if(kind.equals("expression")){
             if(second != null){
-                //TODO exp has + or -
+                if(second.info.equals("+")){
+                    return first.evaluate() + third.evaluate();
+                }else if(second.info.equals("-")){
+                    return first.evaluate() - third.evaluate();
+                }
             }else{
                 first.evaluate();
             }
         }else if (kind.equals("term")){
             if(second != null){
-                //TODO term has * or /
+                if(second.info.equals("*")){
+                    return first.evaluate() * third.evaluate();
+                }else if(second.info.equals("/")){
+                    return first.evaluate() / third.evaluate();
+                }
             }else{
                 first.evaluate();
             }
