@@ -1,0 +1,75 @@
+My additional design notes.
+
+=======================
+ Parser returned Nodes
+=======================
+
+-------(Statement Node)----------
+(1) Variable decloration (statement node)
+        Children:
+            1: "var" token --Kind = "var" --details = <var_name>
+            2: "=" token
+            3: Recursive decent parsed literal
+
+(2) Keyword: Show
+        Children:
+            1: "show" token --Kind = "show" --details = ""
+            2: Recursive decent parsed literal
+
+(3) Keyword: Msg
+        Children:
+            1: "msg" token --Kind = "msg" --details = ""
+            2: String token
+(4) Keyword: Newline
+        Children:
+            1: "newline" token --Kind = "newline" --details = ""
+(5) Keyword: Input
+        Children:
+            1: "input" token --Kind = "input" --Details = ""
+            2: String token --Kind = "string" --Details = <String>
+            3: "var" token --Kind = "var" --Details = <var_name>
+
+
+-------(Expression Node)----------
+(1) Expression
+    (i) if 2nd token is '+' or '-'
+        Children:
+            1: Recursive decent parsed term
+            2: "opp" token --Kind = "opp" --details = '+' || '-'
+            3: Recursive decent parsed expression
+    (ii) Else
+         Children:
+            1: Recursive decent parsed term
+
+
+----------(Term Node)------------
+(1) Term
+    (i) if 2nd token is '*' or '/'
+        Children:
+            1: Recursive decent parsed term
+            2: "opp" token --Kind = "opp" --details = '*' || '/'
+            3: Recursive decent parsed expression
+    (ii) Else
+         Children:
+            1: Recursive decent parsed term
+
+-------(Factor Node)----------
+(1) Terminal Factor
+    (i) Numerical Literal
+        Children:
+            1: "num" token --Kind = "num" --Details = <FP Literal>
+    (ii) Variable Literal
+        Children:
+            1: "var" token --Kind = "var" --Details = <var_name>
+(2) BIFN
+        Children:
+            1: "bif" Token --Kind = "bif" --Details = <bif_name>
+            2: Recursive decent parsed expression
+(3) Negitive Factor
+        Children:
+            1: "-" token --Kind = "opp" --Details = "-"
+            2: Recursive decent parsed factor
+(4) Paren
+        Children:
+            1: "(" token --Kind = "op" --Details = "("
+            2: Recursive decent parsed expression

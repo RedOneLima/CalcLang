@@ -1,0 +1,66 @@
+============
+Test 1:
+============
+
+>>  x=3
+>>  show x
+
+    Status: Debugged and working correctly.
+    Results: Assignment works correctly and hashes the variable to the value
+             Keyword show returns the correct value.
+
+     Conclution: <var> = <exp> -- working
+                 show <var> -- working
+
+---------------------------------------------------------------------------------
+==========
+Test 2:
+==========
+
+>>  input "Enter input: " myInput
+>>  newline
+>>  msg "You entered: "
+>>  show myInput
+
+     Status: Debugged and working correctly.
+        Results: Input works correctly and hashes the variable to the value
+                 Keyword show returns the correct value.
+                 Keyword newline works correctly
+                 Keyword msg works correctly
+                 Keyword show works correctly
+
+         Conclution: input <string> <var> -- working
+                     newline -- working
+                     msg <string> -- working
+
+                     !--> ALL KEYWORDS TESTED AND WORKING <--!
+
+-----------------------------------------------------------------------------------
+==========
+Test 3:
+==========
+
+>>  x = 5
+>>  y = 12
+>>  complexVar = -(y+x*12)
+>>  msg "complexVar: "
+>>  show complexVar
+>>  newline
+>>  msg "direct expression examination (no var)"
+>>  show -(y+x*12)
+
+    Status: Debugged and working correctly.
+
+-----------------------------------------------------------------------------------
+==========
+Test 4:
+==========
+
+>>  x = 5
+>>  y = -x
+>>  show x
+>>  newline
+>>  show y
+
+    Status: Debugged and working correctly.
+            -<factor> working correctly
